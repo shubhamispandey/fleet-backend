@@ -3,7 +3,6 @@ import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import connectDatabase from "./lib/connectDB.js";
-import userRoutes from "./routes/userRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
 
 // ENVIRONMENT VARIABLES
@@ -27,7 +26,6 @@ app.use(express.json());
 // COOKIE MIDDLEWARE
 app.use(cookieParser());
 
-app.use("/api/user", userRoutes);
 app.use("/api/auth", authRoutes);
 
 app.listen(PORT, async () => {
