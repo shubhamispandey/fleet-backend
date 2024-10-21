@@ -124,7 +124,6 @@ export const register = async (req, res) => {
     });
 
     const mailRes = await sendMail(newUser);
-    console.log(mailRes);
     if (mailRes.status !== 200) {
       console.log("Couldn't send email verification");
       await User.findOneAndDelete({ email });
